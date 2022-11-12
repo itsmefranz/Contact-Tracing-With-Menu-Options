@@ -21,11 +21,11 @@ print ("""
     """)
 print("┗━· • —– ٠ ✤ ٠ —– • · • —– ٠ ✤ ٠ —– • · • —– ٠ ✤ ٠ —– • ·━┛\n") 
 
+personal_info = {}
 while True:
     def menu_program():
         menu=input("What would you like to do? [1-3] ")
         if menu=="1":
-            personal_info = {}
             name = input("Enter user's full name: ")
             age= input("Enter user's age: ")
             address= input("Enter user's home address: ")
@@ -36,12 +36,25 @@ while True:
             print(personal_info)
             print("Saved!")
 
-        if menu=="2":
+        elif menu=="2":
             personal_info = {}
-            name = input("What's the full name of the contact you want to search? ")
+            for key, value in personal_info():
+                if key == name:
+                    print('The value is:', value)
+                    break
+            else:
+                print("Sorry that item is not in the list ")
 
-            personal_info[name] = age, address, phone_num
-
-            print(personal_info.get(age, address, phone_num))
+        elif menu=="3":
+            input_again = input("Do you wish to try again? (ㅅ´ ˘ `) Y/N: ")
+            if input_again == "Y":
+                print("\n")
+                menu_program()
+            elif input_again == "N":
+                print("\n.・。.・゜✭・.・✫・゜・。.・。.・゜✭・.・✫・゜・。.")
+                print("See ya next time! Bye for now ◝(ᵔᵕᵔ)◜\n")
+            else:
+                print("\nEnter Y if you want to start again, or N to exit the program.")
 
     menu_program()
+        
