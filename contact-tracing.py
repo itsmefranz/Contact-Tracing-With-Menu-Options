@@ -24,38 +24,34 @@ print("┗━· • —– ٠ ✤ ٠ —– • · • —– ٠ ✤ ٠ —– �
 personal_info = {}
 while True:
     def menu_program():
-        menu=input("What would you like to do? [1-3] ")
-        if menu=="1":
-            name = input("Enter user's full name: ")
-            age= input("Enter user's age: ")
-            address= input("Enter user's home address: ")
-            phone_num = input("Enter user's phone number: ")
+        menu=int(input("What would you like to do? [1-3] "))
 
-            personal_info[name] = age, address, phone_num
+    if menu=="1":
+        personal_info={}
+        name = input("Enter user's full name: ")
+        age= input("Enter user's age: ")
+        address= input("Enter user's home address: ")
+        phone_num = input("Enter user's phone number: ")
 
-            print(personal_info)
-            print("Saved!")
+        personal_info[name] = age, address, phone_num
 
-        elif menu=="2":
-            personal_info = {}
-            for key, value in personal_info():
-                if key == name:
-                    print('The value is:', value)
-                    break
+        print(personal_info)
+        print("Saved!")
+
+    
+    
+    if menu=="3":
+        while True:
+            retry_exit = input("Do you wish to exit? (ㅅ´ ˘ `) Y/N: ")
+            if retry_exit == "n":
+                print("\n")
+                menu_program()
+            elif retry_exit == "y":
+                print("\n.・。.・゜✭・.・✫・゜・。.・。.・゜✭・.・✫・゜・。.")
+                print("See ya next time! Bye for now ◝(ᵔᵕᵔ)◜\n")
             else:
-                print("Sorry that item is not in the list ")
+                print("\nEnter Y if you want to exit, or N to retry the program.")
+                exit()
 
-        if menu=="3":
-            while True:
-                retry_exit = input("Do you wish to exit? (ㅅ´ ˘ `) Y/N: ")
-                if retry_exit == "n":
-                    print("\n")
-                    menu_program()
-                elif retry_exit == "y":
-                    print("\n.・。.・゜✭・.・✫・゜・。.・。.・゜✭・.・✫・゜・。.")
-                    print("See ya next time! Bye for now ◝(ᵔᵕᵔ)◜\n")
-                else:
-                    print("\nEnter Y if you want to exit, or N to retry the program.")
-                    exit()
     menu_program()
         
