@@ -45,16 +45,17 @@ while True:
             else:
                 print("Sorry that item is not in the list ")
 
-        elif menu=="3":
-            input_again = input("Do you wish to try again? (ㅅ´ ˘ `) Y/N: ")
-            if input_again == "Y":
-                print("\n")
-                menu_program()
-            elif input_again == "N":
-                print("\n.・。.・゜✭・.・✫・゜・。.・。.・゜✭・.・✫・゜・。.")
-                print("See ya next time! Bye for now ◝(ᵔᵕᵔ)◜\n")
-            else:
-                print("\nEnter Y if you want to start again, or N to exit the program.")
-
+        if menu=="3":
+            while True:
+                retry_exit = input("Do you wish to exit? (ㅅ´ ˘ `) Y/N: ")
+                if retry_exit == "n":
+                    print("\n")
+                    menu_program()
+                elif retry_exit == "y":
+                    print("\n.・。.・゜✭・.・✫・゜・。.・。.・゜✭・.・✫・゜・。.")
+                    print("See ya next time! Bye for now ◝(ᵔᵕᵔ)◜\n")
+                else:
+                    print("\nEnter Y if you want to exit, or N to retry the program.")
+                    exit()
     menu_program()
         
