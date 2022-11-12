@@ -21,17 +21,27 @@ print ("""
     """)
 print("┗━· • —– ٠ ✤ ٠ —– • · • —– ٠ ✤ ٠ —– • · • —– ٠ ✤ ٠ —– • ·━┛\n") 
 
-def menu_program():
-    menu=input("What would you like to do? ")
-    if menu=="1":
-        personal_info = {}
-        name = input("Enter user's full name: ")
-        age= input("Enter user's age: ")
-        address= input("Enter user's home address: ")
-        phone_num = input("Enter user's phone number: ")
+while True:
+    def menu_program():
+        menu=input("What would you like to do? [1-3] ")
+        if menu=="1":
+            personal_info = {}
+            name = input("Enter user's full name: ")
+            age= input("Enter user's age: ")
+            address= input("Enter user's home address: ")
+            phone_num = input("Enter user's phone number: ")
 
-        personal_info[name] = age, address, phone_num
+            personal_info[name] = age, address, phone_num
 
-        print(personal_info)
+            print(personal_info)
+            print("Saved!")
 
-menu_program()
+        if menu=="2":
+            personal_info = {}
+            name = input("What's the full name of the contact you want to search? ")
+
+            personal_info[name] = age, address, phone_num
+
+            print(personal_info.get(age, address, phone_num))
+
+    menu_program()
