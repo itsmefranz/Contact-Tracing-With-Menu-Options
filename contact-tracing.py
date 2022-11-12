@@ -12,13 +12,37 @@
 #		- Option 2: Search, ask full name then display the record
 #		- Option 3: Ask the user if want to exit or retry.
 
-print()
-
 print("\n┏━· • —– ٠ ✤ ٠ —– • · • —– ٠ ✤ ٠ —– • · • —– ٠ ✤ ٠ —– • ·━┓")
 print ("""
     Menu
     [1] ✎ Add an item
     [2] ✔ Search
-    [3] ∷ Modify an element
+    [3] ∷ Exit (Y/N)
     """)
-print("┗━· • —– ٠ ✤ ٠ —– • · • —– ٠ ✤ ٠ —– • · • —– ٠ ✤ ٠ —– • ·━┛\n")
+print("┗━· • —– ٠ ✤ ٠ —– • · • —– ٠ ✤ ٠ —– • · • —– ٠ ✤ ٠ —– • ·━┛\n") 
+def menu_program():
+    menu=input("What would you like to do? ")
+    if menu=="1":
+        for i in range(4):
+            name = input("Enter user's full name: ")
+            age= input("Enter user's salary: ")
+            address= input("Enter user's home address: ")
+            phone_num = input("Enter user's phone number: ")
+
+            personal_info[name] = age, address, phone_num
+
+            print(personal_info)
+
+
+print()
+personal_info = {}
+
+for i in range(3):
+    name = input("Enter user's full name: ")
+    age= input("Enter user's salary: ")
+    address= input("Enter user's home address: ")
+    phone_num = input("Enter user's phone number: ")
+
+    personal_info[name] = age, address, phone_num
+
+print(personal_info)
